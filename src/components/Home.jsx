@@ -7,7 +7,7 @@ function Home() {
     return (
         <div className="card mt-5 bg-secondary">
             <div className="card-header mb-0 bg-dark text-secondary">
-                <h5>Search Artist</h5>
+                <h5>Search Music Artists.</h5>
             </div>
             <div className="row">
                 <div className="col-md-10">
@@ -16,7 +16,7 @@ function Home() {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Artist:</span>
                             </div>
-                            <input type="text" onChange={e => setArtist(e.target.value)} aria-label="Artist-name" id="artist-input" className="form-control" />
+                            <input type="text" onChange={e => setArtist(e.target.value)} aria-label="Artist-name" id="artist-input" placeholder="Gucci" className="form-control" />
                             <p id="alert text-alert"></p>
                         </div>
                     </div>
@@ -31,15 +31,3 @@ function Home() {
 }
 
 export default Home;
-
-/*
-() => {
-                        let artistInput = "";//document.getElementById('artist-input').value;
-                        if(artistInput === "") {
-                            let alertP = document.getElementById('alert').textContent;
-                            let alert = document.createTextNode('Please enter an artist name.');
-                            alertP.appendChild(alert);
-                        } else {
-                            return `./search/${artistInput}`;
-                        }
-                        */

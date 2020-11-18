@@ -7,6 +7,7 @@ function SearchArtist(props) {
   const getData = async() => {
     let res = await fetch(`https://itunes.apple.com/search?term=${props.match.params.artist}`);
     let results = await res.json();
+    console.log(results);
     let list = results.results.map((result) => {
       return (
         <div key={result.trackId} className="card card-search bg-dark">
@@ -27,10 +28,12 @@ function SearchArtist(props) {
     getData();
   }, []);
 
+
   return (
     <React.Fragment>
       <div className="card bg-dark mb-3">
         <Link to={'../'} className="btn m-3 btn-lg btn-secondary">Home</Link>
+        <h1 className="text-center text-light" style={{textTransform: "capitalize"}}>{props.match.params.artist}</h1>
       </div>
       <div className="d-flex flex-wrap justify-content-center">
         {results}
