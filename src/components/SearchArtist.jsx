@@ -32,8 +32,10 @@ function SearchArtist(props) {
   return (
     <React.Fragment>
       <div className="card bg-dark mb-3">
-        <Link to={'../'} className="btn m-3 btn-lg btn-secondary">Home</Link>
-        <h1 className="text-center text-light" style={{textTransform: "capitalize"}}>{props.match.params.artist}</h1>
+        <div className="row">
+          <div className="col-sm-2"><Link to={'../'} className="btn m-3 btn-lg btn-secondary">Home</Link></div>
+          <div className="col-sm-10"><h1 className="text-light m-3" style={{textTransform: "capitalize"}}>Searching for: {props.match.params.artist}</h1></div>
+        </div>
       </div>
       <div className="d-flex flex-wrap justify-content-center">
         {results}
