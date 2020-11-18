@@ -4,6 +4,25 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 function Home() {
     const [artist, setArtist] = useState('');
 
+    useEffect(() => {
+        /*************
+         * slapped this in a try/catch because every 
+         * once in a while
+         * doc.gtElmtBId("artst-inpt") is null???
+         */
+        try {
+            let input = document.getElementById("artist-input");
+            input.addEventListener("keydown", (e)=> {
+                if(e.key === "Enter" && input.value !== "") {
+                    document.getElementById("clickyClick").click();  // aye
+                }
+            });
+        return ('');
+        } catch(error) {
+            console.error(error);
+        }
+    }, []);
+
     return (
         <div className="card mt-5 bg-secondary">
             <div className="card-header mb-0 bg-dark text-secondary">
@@ -22,7 +41,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="col-md-2">
-                    <Link to={`/search/${artist}`} className="btn mt-3 btn-lg btn-dark text-secondary">Search</Link>
+                    <Link to={`/search/${artist}`} className="btn mt-3 btn-lg btn-dark text-secondary" id="clickyClick">Search</Link>
                 </div>
             </div>
         </div>
