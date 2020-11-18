@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+/******** says Router, Route, and Switch aren't used, but if I delete them my code breaks  ********/
 
 function Home() {
     const [artist, setArtist] = useState('');
