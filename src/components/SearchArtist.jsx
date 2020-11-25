@@ -30,7 +30,7 @@ function SearchArtist(props) {
 
 
   return (
-    <React.Fragment>
+    <>
       <div className="card bg-dark mb-3">
         <div className="row">
           <div className="col-sm-2"><Link to={'../'} className="btn m-3 btn-lg btn-secondary">Home</Link></div>
@@ -40,7 +40,7 @@ function SearchArtist(props) {
       <div className="d-flex flex-wrap justify-content-center">
         {results}
       </div>
-    </React.Fragment>
+    </>
   );
 
 }
